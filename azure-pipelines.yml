@@ -16,7 +16,6 @@ steps:
   inputs:
     mavenPomFile: 'StudentGradeApp/pom.xml'
     mavenOptions: '-Xmx3072m'
-    options: '-DskipTests'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '17'
     jdkArchitectureOption: 'x64'
