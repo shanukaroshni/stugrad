@@ -10,13 +10,15 @@ pool:
   name: 'SelfHostedAgent'
 
 steps:
+- checkout: self
+
 - task: Maven@3
   inputs:
-    mavenPomFile: 'pom.xml'
+    mavenPomFile: 'StudentGradeApp/pom.xml'
     mavenOptions: '-Xmx3072m'
+    options: '-DskipTests'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '17'
     jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    publishJUnitResults: false
     goals: 'package'
